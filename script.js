@@ -16,7 +16,8 @@ let appData = {
     income: [],
     savings: false
 }
-alert("Бюждет на один день равен " + money/30 + "рублей");
+let result = (money - answerForSecondQuestion)/30;
+alert("Бюждет на один день равен " + result + "рублей");
 
 
 
