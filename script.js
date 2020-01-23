@@ -1,23 +1,24 @@
-let money = prompt("Ваш бюджет на месяц?", undefined);
-let time = prompt("Введите дату в формате YYYY-MM-DD", undefined);
-console.log(money);
-console.log(time)
-
-let answerForFirstQuestion = prompt("Введите обязательную статью расходов в этом месяце", undefined);
-let answerForSecondQuestion = prompt("Во сколько обойдется?", undefined);
+let money = prompt("Ваш бюджет на месяц?", undefined),
+    time = prompt("Введите дату в формате YYYY-MM-DD", undefined);
 
 let appData = {
     budget: money,
     timeData: time,
-    expenses: {
-        answerForFirstQuestion : answerForSecondQuestion
-    },
+    expenses: {},
     optionalExpenses: {},
     income: [],
     savings: false
 }
-let result = (money - answerForSecondQuestion)/30;
-alert("Бюждет на один день равен " + result + "рублей");
+
+let answerForFirstQuestion = prompt("Введите обязательную статью расходов в этом месяце", undefined),
+    answerForSecondQuestion = prompt("Во сколько обойдется?", undefined),
+    answerForThirdQuestion = prompt("Введите обязательную статью расходов в этом месяце", undefined),
+    answerForFourthQuestion = prompt("Во сколько обойдется?", undefined);
+
+appData.expenses.answerForFirstQuestion = answerForSecondQuestion;
+appData.expenses.answerForThirdQuestion = answerForFourthQuestion;
+
+alert("Бюждет на один день равен " + appData.budget/30 + "рублей");
 
 
 
